@@ -225,6 +225,7 @@ def get_data_label_frommat(mat_path, dataset_name, session_id):
         one_sub_data, one_sub_label: array (851*310, 851*1)
     '''
     _, _, labels = get_number_of_label_n_trial(dataset_name)
+    print(os.path.exists(mat_path))
     mat_data = scio.loadmat(mat_path)
     mat_de_data = {key: value for key,
                    value in mat_data.items() if key.startswith('de_LDS')}
