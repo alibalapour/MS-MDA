@@ -292,6 +292,7 @@ def load_data(dataset_name):
             mat_path = path + '/' + str(i+1) + '/' + allmats[i][j]
             one_data, one_label = get_data_label_frommat(
                 mat_path, dataset_name, i)
+            print(one_data)
             data[i][j] = one_data.copy()
             label[i][j] = one_label.copy()
     return np.array(data), np.array(label)
