@@ -225,12 +225,24 @@ def get_data_label_frommat(mat_path, dataset_name, session_id):
         one_sub_data, one_sub_label: array (851*310, 851*1)
     '''
     _, _, labels = get_number_of_label_n_trial(dataset_name)
-    print(os.path.exists(mat_path))
     mat_data = scio.loadmat(mat_path)
+    print('mat_data : ', mat_data)
+    print()
+    
     mat_de_data = {key: value for key,
                    value in mat_data.items() if key.startswith('de_LDS')}
+    print('mat_de_data : ', mat_de_data)
+    print()
+    
     mat_de_data = list(mat_de_data.values())
+    print('mat_de_data : ', mat_de_data)
+    print()
+    
     one_sub_data, one_sub_label = reshape_data(mat_de_data, labels[session_id])
+    print('one_sub_data : ', one_sub_data)
+    print('one_sub_label : ', one_sub_label)
+    print()
+    
     return one_sub_data, one_sub_label
 
 
