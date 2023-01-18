@@ -290,6 +290,7 @@ def load_data(dataset_name):
     for i in range(len(allmats)):
         for j in range(len(allmats[0])):
             mat_path = path + '/' + str(i+1) + '/' + allmats[i][j]
+            print(mat_path)
             one_data, one_label = get_data_label_frommat(
                 mat_path, dataset_name, i)
             print(one_data)
