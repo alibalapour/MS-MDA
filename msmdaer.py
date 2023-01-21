@@ -243,7 +243,7 @@ if __name__ == '__main__':
                         help='the dataset used for MS-MDAER, "seed3" or "seed4"')
     parser.add_argument('--norm_type', type=str, default='ele',
                         help='the normalization type used for data, "ele", "sample", "global" or "none"')
-    parser.add_argument('--batch_size', type=int, default=512,
+    parser.add_argument('--batch_size', type=int, default=256,
                         help='size for one batch, integer')
     parser.add_argument('--epoch', type=int, default=100,
                         help='training epoch, integer')
