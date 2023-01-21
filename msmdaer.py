@@ -239,7 +239,7 @@ def cross_session(data, label, session_id, subject_id, category_number, batch_si
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='MS-MDAER parameters')
-    parser.add_argument('--dataset', type=str, default='seed3',
+    parser.add_argument('--dataset', type=str, default='seed4',
                         help='the dataset used for MS-MDAER, "seed3" or "seed4"')
     parser.add_argument('--norm_type', type=str, default='ele',
                         help='the normalization type used for data, "ele", "sample", "global" or "none"')
