@@ -226,27 +226,10 @@ def get_data_label_frommat(mat_path, dataset_name, session_id):
     '''
     _, _, labels = get_number_of_label_n_trial(dataset_name)
     mat_data = scio.loadmat(mat_path)
-#     print('mat_data : ', mat_data)
-#     print()
-    
-#     mat_de_data = {key: value for key,
-#                    value in mat_data.items() if key.startswith('de_LDS')}
-
     mat_de_data = {key: value for key,
-                   value in mat_data.items() if key.startswith('ww_eeg')}
-    
-#     print('mat_de_data : ', mat_de_data)
-#     print()
-    
+                   value in mat_data.items() if key.startswith('de_LDS')}
     mat_de_data = list(mat_de_data.values())
-#     print('mat_de_data : ', mat_de_data)
-#     print()
-    
     one_sub_data, one_sub_label = reshape_data(mat_de_data, labels[session_id])
-#     print('one_sub_data : ', one_sub_data)
-#     print('one_sub_label : ', one_sub_label)
-#     print()
-    
     return one_sub_data, one_sub_label
 
 
@@ -307,10 +290,8 @@ def load_data(dataset_name):
     for i in range(len(allmats)):
         for j in range(len(allmats[0])):
             mat_path = path + '/' + str(i+1) + '/' + allmats[i][j]
-            print(mat_path)
             one_data, one_label = get_data_label_frommat(
                 mat_path, dataset_name, i)
-            print(one_data)
             data[i][j] = one_data.copy()
             label[i][j] = one_label.copy()
     return np.array(data), np.array(label)
